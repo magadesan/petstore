@@ -28,7 +28,7 @@ import java.util.Map;
 /**
  * API tests for PetApi
  */
-@Disabled
+//@Disabled
 public class PetApiTest {
 
     private final PetApi api = new PetApi();
@@ -67,7 +67,10 @@ public class PetApiTest {
      */
     @Test
     public void findPetsByStatusTest() throws ApiException {
-        List<String> status = null;
+        List<String> status = new ArrayList<String>();
+        status.add("available");
+        status.add("pending");
+        status.add("sold");
         List<Pet> response = api.findPetsByStatus(status);
         // TODO: test validations
     }
