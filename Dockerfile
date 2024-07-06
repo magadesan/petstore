@@ -1,4 +1,4 @@
-FROM maven:3.6.3-jdk-8
+FROM maven:3.8.5-jdk-8
 
 COPY . /petstore
 WORKDIR /petstore
