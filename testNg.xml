@@ -1,0 +1,11 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Petstore">
+    <test name="Petstore">
+        <classes>
+            <class name="org.openapitools.client.api.PetApiTest"></class>
+            <class name="org.openapitools.client.api.StoreApiTest"></class>
+            <class name="org.openapitools.client.api.UserApiTest"></class>
+        </classes>
+    </test>
+</suite>

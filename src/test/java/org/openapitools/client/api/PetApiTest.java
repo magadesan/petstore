@@ -13,17 +13,17 @@
 
 package org.openapitools.client.api;
 
-import org.openapitools.client.ApiException;
-import java.io.File;
-import org.openapitools.client.model.ModelApiResponse;
-import org.openapitools.client.model.Pet;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.JSON;
+import org.openapitools.client.logs.PrintLogs;
+import org.openapitools.client.model.ModelApiResponse;
+import org.openapitools.client.model.Pet;
 
+import java.io.File;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for PetApi
@@ -32,6 +32,9 @@ import java.util.Map;
 public class PetApiTest {
 
     private final PetApi api = new PetApi();
+    PrintLogs printLogs = new PrintLogs(getClass(), "PetstoreReport.html");
+    JSON json;
+
 
     /**
      * Add a new pet to the store
@@ -68,7 +71,12 @@ public class PetApiTest {
     @Test
     public void findPetsByStatusTest() throws ApiException {
         List<String> status = null;
+        status = new ArrayList<String>();
+        status.add("available");
         List<Pet> response = api.findPetsByStatus(status);
+        System.out.println(response);
+        printLogs.info(String.valueOf(response));
+
         // TODO: test validations
     }
 
