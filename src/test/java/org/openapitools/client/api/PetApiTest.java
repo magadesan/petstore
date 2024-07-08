@@ -13,7 +13,6 @@
 
 package org.openapitools.client.api;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.openapitools.client.ApiException;
 import org.openapitools.client.JSON;
@@ -28,7 +27,7 @@ import java.util.List;
 /**
  * API tests for PetApi
  */
-@Disabled
+//@Disabled
 public class PetApiTest {
 
     private final PetApi api = new PetApi();
