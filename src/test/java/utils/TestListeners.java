@@ -1,5 +1,5 @@
 package utils;
-/*
+
 import org.openapitools.client.logs.ExtentManager;
 import org.openapitools.client.logs.ExtentTestManager;
 import org.testng.ITestContext;
@@ -51,4 +51,3 @@ public class TestListeners implements ITestListener {
     public void onFinish(ITestContext context) {
     }
 }
-*/

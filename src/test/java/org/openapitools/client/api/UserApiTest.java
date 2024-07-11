@@ -12,22 +12,17 @@
 
 
 package org.openapitools.client.api;
+import org.testng.annotations.Test;
 
 import org.openapitools.client.ApiException;
-import java.time.OffsetDateTime;
 import org.openapitools.client.model.User;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for UserApi
  */
-@Disabled
+//@Disabled
 public class UserApiTest {
 
     private final UserApi api = new UserApi();
@@ -39,7 +34,7 @@ public class UserApiTest {
      *
      * @throws ApiException if the Api call fails
      */
-    @Test
+    //@Test
     public void createUserTest() throws ApiException {
         User body = null;
         api.createUser(body);
@@ -51,7 +46,7 @@ public class UserApiTest {
      *
      * @throws ApiException if the Api call fails
      */
-    @Test
+    //@Test
     public void createUsersWithArrayInputTest() throws ApiException {
         List<User> body = null;
         api.createUsersWithArrayInput(body);
@@ -63,7 +58,7 @@ public class UserApiTest {
      *
      * @throws ApiException if the Api call fails
      */
-    @Test
+    //@Test
     public void createUsersWithListInputTest() throws ApiException {
         List<User> body = null;
         api.createUsersWithListInput(body);
@@ -77,7 +72,7 @@ public class UserApiTest {
      *
      * @throws ApiException if the Api call fails
      */
-    @Test
+    //@Test
     public void deleteUserTest() throws ApiException {
         String username = null;
         api.deleteUser(username);
@@ -89,7 +84,7 @@ public class UserApiTest {
      *
      * @throws ApiException if the Api call fails
      */
-    @Test
+    //@Test
     public void getUserByNameTest() throws ApiException {
         String username = null;
         User response = api.getUserByName(username);
@@ -101,7 +96,7 @@ public class UserApiTest {
      *
      * @throws ApiException if the Api call fails
      */
-    @Test
+    //@Test
     public void loginUserTest() throws ApiException {
         String username = null;
         String password = null;
@@ -127,7 +122,7 @@ public class UserApiTest {
      *
      * @throws ApiException if the Api call fails
      */
-    @Test
+    //@Test
     public void updateUserTest() throws ApiException {
         String username = null;
         User body = null;

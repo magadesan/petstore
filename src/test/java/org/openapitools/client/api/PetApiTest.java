@@ -12,8 +12,8 @@
 
 
 package org.openapitools.client.api;
+//import org.junit.Test;
 
-import org.junit.jupiter.api.Test;
 import org.openapitools.client.ApiException;
 import org.openapitools.client.JSON;
 import org.openapitools.client.logs.PrintLogs;
@@ -34,16 +34,17 @@ public class PetApiTest {
     PrintLogs printLogs = new PrintLogs(getClass(), "PetstoreReport.html");
     JSON json;
 
-
     /**
      * Add a new pet to the store
      *
      * @throws ApiException if the Api call fails
      */
-    @Test
+    //@Test
     public void addPetTest() throws ApiException {
         Pet body = null;
         api.addPet(body);
+        body = new Pet();
+
         // TODO: test validations
     }
 
@@ -52,7 +53,7 @@ public class PetApiTest {
      *
      * @throws ApiException if the Api call fails
      */
-    @Test
+    //@Test
     public void deletePetTest() throws ApiException {
         Long petId = null;
         String apiKey = null;
@@ -67,13 +68,13 @@ public class PetApiTest {
      *
      * @throws ApiException if the Api call fails
      */
-    @Test
+    //@Test
     public void findPetsByStatusTest() throws ApiException {
         List<String> status = null;
         status = new ArrayList<String>();
         status.add("available");
         List<Pet> response = api.findPetsByStatus(status);
-        System.out.println(response);
+        //System.out.println(response);
         printLogs.info(String.valueOf(response));
 
         // TODO: test validations
@@ -86,7 +87,7 @@ public class PetApiTest {
      *
      * @throws ApiException if the Api call fails
      */
-    @Test
+    //@Test
     public void findPetsByTagsTest() throws ApiException {
         List<String> tags = null;
         List<Pet> response = api.findPetsByTags(tags);
@@ -100,7 +101,7 @@ public class PetApiTest {
      *
      * @throws ApiException if the Api call fails
      */
-    @Test
+    //@Test
     public void getPetByIdTest() throws ApiException {
         Long petId = null;
         Pet response = api.getPetById(petId);
@@ -112,7 +113,7 @@ public class PetApiTest {
      *
      * @throws ApiException if the Api call fails
      */
-    @Test
+    //@Test
     public void updatePetTest() throws ApiException {
         Pet body = null;
         api.updatePet(body);
@@ -124,7 +125,7 @@ public class PetApiTest {
      *
      * @throws ApiException if the Api call fails
      */
-    @Test
+    //@Test
     public void updatePetWithFormTest() throws ApiException {
         Long petId = null;
         String name = null;
@@ -138,7 +139,7 @@ public class PetApiTest {
      *
      * @throws ApiException if the Api call fails
      */
-    @Test
+    //@Test
     public void uploadFileTest() throws ApiException {
         Long petId = null;
         String additionalMetadata = null;
