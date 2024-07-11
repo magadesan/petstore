@@ -12,10 +12,10 @@
 
 
 package org.openapitools.client.api;
-import org.testng.annotations.Test;
 
 import org.openapitools.client.ApiException;
 import org.openapitools.client.model.User;
+import org.testng.annotations.Test;
 
 import java.util.List;
 

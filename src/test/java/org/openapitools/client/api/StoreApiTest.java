@@ -15,18 +15,13 @@ package org.openapitools.client.api;
 
 import org.openapitools.client.ApiException;
 import org.openapitools.client.model.Order;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
  * API tests for StoreApi
  */
-@Disabled
+//@Test(enabled = false)
 public class StoreApiTest {
 
     private final StoreApi api = new StoreApi();
@@ -38,7 +33,7 @@ public class StoreApiTest {
      *
      * @throws ApiException if the Api call fails
      */
-    @Test
+    //@Test
     public void deleteOrderTest() throws ApiException {
         Long orderId = null;
         api.deleteOrder(orderId);
@@ -52,7 +47,7 @@ public class StoreApiTest {
      *
      * @throws ApiException if the Api call fails
      */
-    @Test
+    //@Test
     public void getInventoryTest() throws ApiException {
         Map<String, Integer> response = api.getInventory();
         // TODO: test validations
@@ -65,7 +60,7 @@ public class StoreApiTest {
      *
      * @throws ApiException if the Api call fails
      */
-    @Test
+    //@Test
     public void getOrderByIdTest() throws ApiException {
         Long orderId = null;
         Order response = api.getOrderById(orderId);
@@ -77,7 +72,7 @@ public class StoreApiTest {
      *
      * @throws ApiException if the Api call fails
      */
-    @Test
+    //@Test
     public void placeOrderTest() throws ApiException {
         Order body = null;
         Order response = api.placeOrder(body);

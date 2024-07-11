@@ -12,7 +12,6 @@
 
 
 package org.openapitools.client.api;
-//import org.junit.Test;
 
 import org.openapitools.client.ApiException;
 import org.openapitools.client.JSON;
