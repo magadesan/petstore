@@ -27,4 +27,4 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn test -e -X -Dtest=org.openapitools.client.api.PetApiTest#findPetsByStatusTest
+      run: mvn clean test
