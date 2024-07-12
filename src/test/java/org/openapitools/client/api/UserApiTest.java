@@ -14,6 +14,7 @@
 package org.openapitools.client.api;
 
 import org.openapitools.client.ApiException;
+import org.openapitools.client.logs.PrintLogs;
 import org.openapitools.client.model.User;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -29,7 +30,7 @@ import java.util.List;
 public class UserApiTest {
 
     private final UserApi api = new UserApi();
-
+    PrintLogs printLogs = new PrintLogs(getClass(), "PetstoreReport.html");
     /**
      * Create user
      *

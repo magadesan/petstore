@@ -19,6 +19,7 @@ import org.openapitools.client.logs.PrintLogs;
 import org.openapitools.client.model.ModelApiResponse;
 import org.openapitools.client.model.Pet;
 import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
 import utils.TestListeners;
 
 import java.io.File;
@@ -71,14 +72,15 @@ public class PetApiTest {
      *
      * @throws ApiException if the Api call fails
      */
-    //@Test
+    @Test
     public void findPetsByStatusTest() throws ApiException {
         List<String> status = null;
         status = new ArrayList<String>();
         status.add("available");
         List<Pet> response = api.findPetsByStatus(status);
         //System.out.println(response);
-        printLogs.info(String.valueOf(response));
+        printLogs.info("Api response is: " + json.serialize(response));
+
 
         // TODO: test validations
     }

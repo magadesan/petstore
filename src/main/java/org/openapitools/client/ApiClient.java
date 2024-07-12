@@ -22,7 +22,8 @@ import okio.Buffer;
 import okio.BufferedSink;
 import okio.Okio;
 import org.apache.oltu.oauth2.client.request.OAuthClientRequest.TokenRequestBuilder;
-import org.apache.oltu.oauth2.common.message.types.GrantType;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.logs.PrintLogs;
 
 import javax.net.ssl.*;
 import java.io.File;
@@ -41,7 +42,6 @@ import java.security.SecureRandom;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
-import java.security.cert.X509Certificate;
 import java.text.DateFormat;
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
@@ -49,17 +49,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.Map.Entry;
 import java.util.concurrent.TimeUnit;
-import java.util.function.Supplier;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import org.openapitools.client.auth.Authentication;
-import org.openapitools.client.auth.HttpBasicAuth;
-import org.openapitools.client.auth.HttpBearerAuth;
-import org.openapitools.client.auth.ApiKeyAuth;
-import org.openapitools.client.auth.OAuth;
-import org.openapitools.client.auth.RetryingOAuth;
-import org.openapitools.client.auth.OAuthFlow;
 
 /**
  * <p>ApiClient class.</p>
@@ -101,6 +92,7 @@ public class ApiClient {
     private JSON json;
 
     private HttpLoggingInterceptor loggingInterceptor;
+    PrintLogs printLogs;
 
     /**
      * Basic constructor for ApiClient
@@ -108,6 +100,7 @@ public class ApiClient {
     public ApiClient() {
         init();
         initHttpClient();
+        printLogs = new PrintLogs(getClass(), "PetstoreReport.html");
 
         // Setup authentications (key: authentication name, value: authentication).
         authentications.put("api_key", new ApiKeyAuth("header", "api_key"));
@@ -1250,7 +1243,7 @@ public class ApiClient {
      */
     public Call buildCall(String baseUrl, String path, String method, List<Pair> queryParams, List<Pair> collectionQueryParams, Object body, Map<String, String> headerParams, Map<String, String> cookieParams, Map<String, Object> formParams, String[] authNames, ApiCallback callback) throws ApiException {
         Request request = buildRequest(baseUrl, path, method, queryParams, collectionQueryParams, body, headerParams, cookieParams, formParams, authNames, callback);
-
+        printLogs.info("API Request : " + request.url().toString()+"::"+request.method().toString()+"::"+requestBodyToString(request.body()));
         return httpClient.newCall(request);
     }
 
