@@ -15,6 +15,8 @@ package org.openapitools.client.api;
 
 import org.openapitools.client.ApiException;
 import org.openapitools.client.model.Order;
+import org.testng.annotations.Listeners;
+import utils.TestListeners;
 
 import java.util.Map;
 
@@ -22,6 +24,7 @@ import java.util.Map;
  * API tests for StoreApi
  */
 //@Test(enabled = false)
+@Listeners(TestListeners.class)
 public class StoreApiTest {
 
     private final StoreApi api = new StoreApi();

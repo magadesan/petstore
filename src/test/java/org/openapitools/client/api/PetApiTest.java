@@ -18,15 +18,19 @@ import org.openapitools.client.JSON;
 import org.openapitools.client.logs.PrintLogs;
 import org.openapitools.client.model.ModelApiResponse;
 import org.openapitools.client.model.Pet;
+import org.testng.annotations.Listeners;
+import utils.TestListeners;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /**
  * API tests for PetApi
  */
 //@Disabled
+@Listeners(TestListeners.class)
 public class PetApiTest {
 
     private final PetApi api = new PetApi();

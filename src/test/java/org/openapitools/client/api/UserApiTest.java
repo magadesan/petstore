@@ -15,7 +15,9 @@ package org.openapitools.client.api;
 
 import org.openapitools.client.ApiException;
 import org.openapitools.client.model.User;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import utils.TestListeners;
 
 import java.util.List;
 
@@ -23,6 +25,7 @@ import java.util.List;
  * API tests for UserApi
  */
 //@Disabled
+@Listeners(TestListeners.class)
 public class UserApiTest {
 
     private final UserApi api = new UserApi();
